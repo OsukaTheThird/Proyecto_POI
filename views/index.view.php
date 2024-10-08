@@ -27,7 +27,7 @@
                 <label for="password" class="formulario_label">Contraseña </label>
                 <div> 
                     <input type="text" name="correo" id="correo" class="formulario_input"> 
-
+                    
                 </div>
 
             </div>
@@ -40,7 +40,7 @@
 
             <br>
 
-            <p>¿No tienes una cuenta? <a class="link" href="registro.html">Regístrate </a></p>
+            <p>¿No tienes una cuenta? <a class="link" href="registro.php">Regístrate </a></p>
 
         </form>
 

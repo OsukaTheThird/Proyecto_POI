@@ -5,7 +5,7 @@ return [
         "host" => "localhost",
         "user" => "root",
         "password" => "root",
-        "dbname" => "poi_db",
+        "dbname" => "db_poi",
         "port" => "3306",
     ],
 ];

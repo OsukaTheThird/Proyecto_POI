@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--<box-icon name='power-off'></box-icon>-->
-    <title>Lighthouse</title>
+    <title>Syum</title>
 </head>
 
 <body>
@@ -17,8 +17,9 @@
         <div class="title">Registro</div>
         <form class="formulario" name="formulario" id="formulario" enctype="multipart/form-data" method="POST">
 
+            
             <!-- Usuario  -->
-            <div class="formulario_grupo" id="grupo_usuario">
+            <!-- <div class="formulario_grupo" id="grupo_usuario">
                 <label for="usuario" class="formulario_label">Usuario:</label>
                 <div class="formulario_grupo-input">
                     <input type="text" name="usuario" id="usuario" class="formulario_input">
@@ -26,19 +27,7 @@
                 </div>
                 <p class="formulario_input-error">El Usuario debe contener de 4 a 16 caracteres, estos deben ser letras,
                     numeros o guion bajo.</p>
-            </div>
-
-            <!-- correo -->
-            <div class="formulario_grupo" id="grupo_email">
-                <label for="email" class="formulario_label">Email:</label>
-                <div class="formulario_grupo-input">
-
-                    <input type="email" name="email" id="email"
-                        class="formulario_input">
-                    <i class="formulario_validacion-estado bx bxs-x-circle"></i>
-                </div>
-                <p class="formulario_input-error">Siga el formato tradicional de email aaa.aaa@aaa.aaa.</p>
-            </div>
+            </div> -->
 
             <!-- nombre -->
             <div class="formulario_grupo" id="grupo_nombre">
@@ -62,6 +51,18 @@
                     <p class="formulario_input-error">El Apellido solo puede contener letras espacios.</p>
                 </div>
 
+            </div>
+
+            <!-- correo -->
+            <div class="formulario_grupo" id="grupo_email">
+                <label for="email" class="formulario_label">Email:</label>
+                <div class="formulario_grupo-input">
+
+                    <input type="email" name="email" id="email"
+                        class="formulario_input">
+                    <i class="formulario_validacion-estado bx bxs-x-circle"></i>
+                </div>
+                <p class="formulario_input-error">Siga el formato tradicional de email aaa.aaa@aaa.aaa.</p>
             </div>
 
             <!-- contraseña -->
@@ -128,7 +129,7 @@
 
         </form>
         <div class="formulario_grupo" id="grupo_iniciarsesion">
-            <p class="details">¿Ya tienes una cuenta? <a class="link" href="login.html">Inicia Sesion</a></p>
+            <p class="details">¿Ya tienes una cuenta?<a class="link" href="index.php">Inicia Sesion</a></p>
         </div>
     </main>
 
