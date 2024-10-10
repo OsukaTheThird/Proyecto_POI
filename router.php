@@ -6,7 +6,10 @@ $routes = require "routes.php";
 
 function toController($uri,$routes){
     if(array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        echo "$routes[$uri]";
+        $url = 'Location: ' . $routes[$uri];
+        header($url);
+        //require $routes[$uri];
     }else{
         abort();
     }
@@ -15,7 +18,7 @@ function toController($uri,$routes){
 function abort($code = 404)
 {
     http_response_code($code);
-    require "views/$code.php";
+    require "./views/$code.php";
     die();
 }
 
