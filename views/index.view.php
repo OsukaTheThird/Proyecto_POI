@@ -40,7 +40,7 @@
 
             <br>
 
-            <p>¿No tienes una cuenta? <a class="link" href="registro.php">Regístrate </a></p>
+            <p>¿No tienes una cuenta? <a class="link" href="register.php">Regístrate </a></p>
 
         </form>
 
