@@ -14,22 +14,11 @@
 
 <body>
     <main>
+
         <div class="title">Registro</div>
+
         <form class="formulario" name="formulario" id="formulario" enctype="multipart/form-data" method="POST">
 
-            
-            <!-- Usuario  -->
-            <!-- <div class="formulario_grupo" id="grupo_usuario">
-                <label for="usuario" class="formulario_label">Usuario:</label>
-                <div class="formulario_grupo-input">
-                    <input type="text" name="usuario" id="usuario" class="formulario_input">
-                    <i class="formulario_validacion-estado bx bxs-x-circle"></i>
-                </div>
-                <p class="formulario_input-error">El Usuario debe contener de 4 a 16 caracteres, estos deben ser letras,
-                    numeros o guion bajo.</p>
-            </div> -->
-
-            <!-- nombre -->
             <div class="formulario_grupo" id="grupo_nombre">
                 <label for="nombre" class="formulario_label">Nombre(s):</label>
                 <div class="formulario_grupo-input">
@@ -107,7 +96,7 @@
 
             <!-- fecha  -->
             <div class="formulario_grupo" id="grupo_fecha">
-                <label for="fecha" class="formulario_label">Fecha de Nacimiento:</label>
+                <label for="fechaNacimiento" class="formulario_label">Fecha de Nacimiento:</label>
                 <div class="formulario_grupo-input">
                     <input class="formulario_input" type="date" id="fecha" name="fecha" min="1990-01-01"
                         max="2022-09-30" required>
@@ -131,13 +120,15 @@
         <div class="formulario_grupo" id="grupo_iniciarsesion">
             <p class="details">¿Ya tienes una cuenta?<a class="link" href="index.php">Inicia Sesion</a></p>
         </div>
+        <p id="mensaje"></p>
+
     </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="js/valdIndex.js"></script>
-    <script src="js/InsertarUser.js"></script>
+                <!--<script src="js/valdIndex.js"></script>-->
+    <script src="./js/register.js"></script>
 </body>
 
 </html>

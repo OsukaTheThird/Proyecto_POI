@@ -3,4 +3,5 @@
 $heading = 'Syum';
 
 
-require '../views/chat.php';
+require '../views/chat.view.php';
+

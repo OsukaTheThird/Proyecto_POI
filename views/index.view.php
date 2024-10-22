@@ -11,41 +11,34 @@
 </head>
 <body>
     <main>
-        <form class="formulario" name="formulario" enctype="multipart/form-data"  method="post">
+        <form class="formulario" name="formulario" id="loginForm" enctype="multipart/form-data" method="post">
             <h1>¡Hola!</h1>
 
             <div class="formulario_grupo" id="grupo_correo"> 
-                <label for="usuario" class="formulario_label">Correo Electrónico </label>
+                <label for="correo" class="formulario_label">Correo Electrónico </label>
                 <div> 
-                    <input type="text" name="correo" id="correo" class="formulario_input"> 
-
+                    <input type="text" name="correo" id="correo" class="formulario_input" required> 
                 </div>
-
             </div>
 
             <div class="formulario_grupo" id="grupo_password">
                 <label for="password" class="formulario_label">Contraseña </label>
                 <div> 
-                    <input type="text" name="correo" id="correo" class="formulario_input"> 
-                    
+                    <input type="password" name="password" id="password" class="formulario_input" required>
                 </div>
-
             </div>
 
             <br>
 
             <div class="formulario_grupo">
-                <button class="formulario_btn" type="submit" >Iniciar Sesión</button>
+                <button class="formulario_btn" type="submit">Iniciar Sesión</button>
             </div>
 
             <br>
 
-            <p>¿No tienes una cuenta? <a class="link" href="register.php">Regístrate </a></p>
-
+            <p>¿No tienes una cuenta? <a class="link" href="register.php">Regístrate</a></p>
         </form>
-
-
     </main>
-    
+    <script src="./js/login.js"></script>
 </body>
 </html>
