@@ -480,6 +480,6 @@
     </section>
     <!-- end: Chat -->
     
-    <script src="script.js"></script>
+    <script src="chatScript.js"></script>
 </body>
 </html>
