@@ -109,6 +109,8 @@ function Login($email, $password) {
             $userData['Email'] = $user['Email'];
             $userData['Activo'] = $user['Activo'];
 
+            // Almacenar los datos del usuario en la sesión
+            $_SESSION['user'] = $userData;
             return $userData;
         } else {
             // Si la contraseña es incorrecta

@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+// Comprobar si el usuario está autenticado
+if (isset($_SESSION['user'])) {
+    // Obtener datos del perfil de usuario
+    $user = $_SESSION['user'];
+}
+?> 
+
 <?php require 'partials/headerApp.php' ?>
 <?php require 'partials/sidebar.php' ?>
 

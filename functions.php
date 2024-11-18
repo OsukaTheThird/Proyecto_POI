@@ -14,3 +14,7 @@ function isUri($route)
     return $_SERVER['REQUEST_URI'] === $route ? 'bg-gray-900 text-white ' : 'text-gray-300 hover:bg-gray-700 hover:text-white ';
 
 }
+
+function blobToBase64($blob) {
+    return base64_encode($blob);
+}
