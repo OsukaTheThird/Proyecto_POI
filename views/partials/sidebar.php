@@ -4,10 +4,12 @@
                     <i class="ri-chat-1-fill"></i>
                 </a>
                 <ul class="chat-sidebar-menu">
-                    <li class="active"><a href="#" data-title="Chats"><i class="ri-chat-3-line"></i></a></li>
+                    <!--
+                    <li class="active"><a href="#" data-title="Chats"><i class="ri-chat-3-line"></i></a></li> -->
+                    <li><a href="/views/chat.view.php" data-title="Chats"><i class="ri-chat-3-line"></i></a></li>
                     <li><a href="#" data-title="Grupos"><i class="ri-group-2-line"></i></a></li>
                     <li><a href="#" data-title="Contactos"><i class="ri-contacts-line"></i></a></li>
-                    <li><a href="#" data-title="Tareas"><i class="ri-survey-line"></i></a></li>
+                    <li><a href="/views/tareas.php" data-title="Tareas"><i class="ri-survey-line"></i></a></li>
                     <li><a href="#" data-title="Documentos"><i class="ri-folder-line"></i></a></li>
                     <!--
                     <li><a href="#" data-title="Configuración"><i class="ri-settings-line"></i></a></li>-->
