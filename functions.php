@@ -15,6 +15,6 @@ function isUri($route)
 
 }
 
-function blobToBase64($blob) {
-    return base64_encode($blob);
-}
+/* function base64ToBlob($Foto){
+    return base64_decode($Foto);
+} */

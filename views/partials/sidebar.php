@@ -15,7 +15,10 @@
                     <li><a href="#" data-title="Configuración"><i class="ri-settings-line"></i></a></li>-->
                     <li class="chat-sidebar-profile">
                         <button type="button" class="chat-sidebar-profile-toggle">
+                            <!--
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
+                            -->
+                            <img src="data:image/jpeg;base64,<?php echo $user['Foto']; ?>" alt="Imagen desde Base64" />
                         </button>
                         <ul class="chat-sidebar-profile-dropdown">
                             <li><a href="/views/perfil.php"><i class="ri-user-line"></i> Perfil</a></li>
