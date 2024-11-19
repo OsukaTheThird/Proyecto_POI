@@ -19,10 +19,10 @@ class Database{
 }
 
 $db_user = "root";
-$db_pass = "123456789";
+$db_pass = "root";
 $db_name = "POI";
 $db_host = "localhost";
-$db_port = "9018";  // puerto de MySQL
+$db_port = "3306";  // puerto de MySQL
 
 #region Conexiones
 // conectar a la base de datos usando PDO
@@ -109,6 +109,8 @@ function Login($email, $password) {
             $userData['Email'] = $user['Email'];
             $userData['Activo'] = $user['Activo'];
 
+            // Almacenar los datos del usuario en la sesión
+            $_SESSION['user'] = $userData;
             return $userData;
         } else {
             // Si la contraseña es incorrecta

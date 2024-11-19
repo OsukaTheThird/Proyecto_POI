@@ -60,3 +60,41 @@ document.querySelectorAll('.conversation-back').forEach(function(item) {
     })
 })
 // end: Coversation
+
+//Globales
+const servers = {
+    iceServers: [
+        {
+            urls: [''],
+        },
+    ],
+    iceCandidatePoolSize: 10,
+};
+
+let pc = new RTCPeerConnection(servers);
+
+let localStream = null;
+let remoteStream = null;
+
+const webcamButton = document.getElementById('webcamButton');
+const webcamVideo = document.getElementById('webcamVideo');
+
+
+//Rceursos de medios
+webcamButton.onclick = async () => {
+    localStream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
+    remoteStream = new MediaStream();
+
+    localStream.getTracks().forEach((track) => {
+        pc.addTrack(track, localStream);
+    });
+
+    pc.ontrack = event => {
+        event.streams[0].getTracks().forEach(track => {
+            remoteStream.addTrack(track);
+        });
+    };
+
+    webcamVideo.srcObject = localStream;
+    webcamVideo.srcObject = remoteStream;
+}

@@ -29,8 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'success' => true,
                 'user' => [
                     'Nombre' => $user['Nombre'],
+                    'Apellido' => $user['Apellido'],
                     'Email' => $user['Email'],
+                    'FechaNacimiento' => $user['FechaNacimiento'],
                     'Foto' => blobToBase64($user['Foto']), // Asegúrate de convertir la foto aquí
+
+                    $_SESSION['user']
                 ]
             ]);
         } else {
