@@ -118,43 +118,8 @@ if (isset($_SESSION['user'])) {
                     <div class="conversation-main">
                         <ul class="conversation-wrapper">
                             <div class="coversation-divider"><span>Today</span></div>
-                            <li class="conversation-item me">
-                                <div class="conversation-item-side">
-                                    <img class="conversation-item-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
-                                </div>
-                                <div class="conversation-item-content">
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus repudiandae quisquam sequi nobis suscipit consequatur rerum alias odio repellat!</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tenetur!</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            <template id="conversation-template">
+
                             <li class="conversation-item">
                                 <div class="conversation-item-side">
                                     <img class="conversation-item-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
@@ -163,38 +128,8 @@ if (isset($_SESSION['user'])) {
                                     <div class="conversation-item-wrapper">
                                         <div class="conversation-item-box">
                                             <div class="conversation-item-text">
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eos ab in?</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, debitis. Iste natus est aliquam ipsum doloremque fugiat, quidem eos autem? Dolor quisquam laboriosam enim cum laborum suscipit perferendis adipisci praesentium.</p>
-                                                <div class="conversation-item-time">12:30</div>
+                                                <p></p>
+                                                <div class="conversation-item-time"></div>
                                             </div>
                                             <div class="conversation-item-dropdown">
                                                 <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
@@ -207,6 +142,8 @@ if (isset($_SESSION['user'])) {
                                     </div>
                                 </div>
                             </li>
+                            </template>
+                            <template id="conversation me-template">
                             <li class="conversation-item me">
                                 <div class="conversation-item-side">
                                     <img class="conversation-item-image" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="">
@@ -215,38 +152,8 @@ if (isset($_SESSION['user'])) {
                                     <div class="conversation-item-wrapper">
                                         <div class="conversation-item-box">
                                             <div class="conversation-item-text">
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, eos, magni temporibus, placeat consectetur nobis incidunt dicta a culpa vel esse. Facilis fugiat possimus eveniet accusamus dignissimos pariatur inventore animi rem vero, eligendi obcaecati fugit quaerat? Officia ex quod eaque maxime ipsam, tempore error laboriosam laborum, magnam ipsum doloremque quas.</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus debitis odio maiores perferendis ipsa repudiandae amet blanditiis quod. Ullam, dolorum.</p>
-                                                <div class="conversation-item-time">12:30</div>
-                                            </div>
-                                            <div class="conversation-item-dropdown">
-                                                <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
-                                                <ul class="conversation-item-dropdown-list">
-                                                    <li><a href="#"><i class="ri-share-forward-line"></i> Forward</a></li>
-                                                    <li><a href="#"><i class="ri-delete-bin-line"></i> Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="conversation-item-wrapper">
-                                        <div class="conversation-item-box">
-                                            <div class="conversation-item-text">
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium blanditiis ea, voluptatum, eveniet at harum minima maxime enim aut non, iure expedita excepturi tempore nostrum quasi natus voluptas dolore ducimus!</p>
-                                                <div class="conversation-item-time">12:30</div>
+                                                <p></p>
+                                                <div class="conversation-item-time"></div>
                                             </div>
                                             <div class="conversation-item-dropdown">
                                                 <button type="button" class="conversation-item-dropdown-toggle"><i class="ri-more-2-line"></i></button>
@@ -259,6 +166,7 @@ if (isset($_SESSION['user'])) {
                                     </div>
                                 </div>
                             </li>
+                            </template>
                         </ul>
                     </div>
                     <div class="conversation-form">

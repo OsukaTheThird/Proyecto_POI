@@ -123,3 +123,42 @@ function Login($email, $password) {
     close_connection();
     return null;
 }
+#region Chat 1-1
+function AddChat($texto, $remitente, $destinatario) {
+    
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+    $action = $_POST['action'];
+
+    switch ($action) {
+        case 'sendMessage':
+            $texto = $_POST['texto'];
+            $remitente = $_POST['remitente'];
+            $destinatario = $_POST['destinatario'];
+
+            $stmt = $db->getConnection()->prepare("CALL sp_Chat_Add(:texto, :remitente, :destinatario)");
+            $stmt->bindParam(':texto', $texto);
+            $stmt->bindParam(':remitente', $remitente);
+            $stmt->bindParam(':destinatario', $destinatario);
+            $stmt->execute();
+            echo json_encode(['success' => true]);
+            break;
+
+        case 'getMessages':
+            $remitente = $_POST['remitente'];
+            $destinatario = $_POST['destinatario'];
+
+            $stmt = $db->getConnection()->prepare("CALL sp_Get_Chat_Messages(:remitente, :destinatario)");
+            $stmt->bindParam(':remitente', $remitente);
+            $stmt->bindParam(':destinatario', $destinatario);
+            $stmt->execute();
+            $messages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            echo json_encode($messages);
+            break;
+
+        default:
+            echo json_encode(['error' => 'Invalid action']);
+            break;
+    }
+}
+}
+#endregion
