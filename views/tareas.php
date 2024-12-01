@@ -1,3 +1,13 @@
+<?php 
+session_start();
+
+// Comprobar si el usuario está autenticado
+if (isset($_SESSION['user'])) {
+    // Obtener datos del perfil de usuario
+    $user = $_SESSION['user'];
+}
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
