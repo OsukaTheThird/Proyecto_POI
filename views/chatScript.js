@@ -98,3 +98,32 @@ webcamButton.onclick = async () => {
     webcamVideo.srcObject = localStream;
     webcamVideo.srcObject = remoteStream;
 }
+
+window.onload = function() {
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var formData = new FormData(this);
+        var submitButton = document.querySelector('button[type="submit"]');
+        submitButton.disabled = true; // Desactivar el botón de envío
+
+        fetch('chat_process.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            var mensaje = document.getElementById('mensaje');
+            if (data === "success") {
+                mensaje.innerText = "Registro exitoso!";
+            } else {
+                mensaje.innerText = "Error: " + data;
+            }
+            submitButton.disabled = false; // Volver a habilitar el botón
+        })
+        .catch(error => {
+            document.getElementById('mensaje').innerText = "Error: " + error.message;
+            submitButton.disabled = false; // Volver a habilitar el botón
+        });
+    });
+};

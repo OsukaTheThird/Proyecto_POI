@@ -19,10 +19,10 @@ class Database{
 }
 
 $db_user = "root";
-$db_pass = "root";
+$db_pass = "123456789";
 $db_name = "POI";
 $db_host = "localhost";
-$db_port = "3306";  // puerto de MySQL
+$db_port = "9018";  // puerto de MySQL
 
 #region Conexiones
 // conectar a la base de datos usando PDO
@@ -124,6 +124,50 @@ function Login($email, $password) {
     return null;
 }
 #region Chat 1-1
+
+function getChatsByEmail($email) {
+    $conn = connect();
+
+    // Consulta que obtiene los chats para el usuario por su correo
+    $sql = "SELECT * FROM chats WHERE usuario_email = :email";  // Suponiendo que hay un campo 'usuario_email' en tu tabla de chats
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);  // Retorna todos los chats del usuario
+}
+
+function getchat($remitente, $destinatario) {
+    // Conectar usando la función de conexión
+    $conn = connect();
+    // Sentencia SQL con marcadores de posición
+    $sql = "CALL sp_Get_Chat_Messages(:remitente, :destinatario)";
+
+    try {
+        // Preparar la declaración
+        $stmt = $conn->prepare($sql);
+
+        // Vincular los parámetros (con tipo explícito)
+        $stmt->bindParam(':remitente', $remitente, PDO::PARAM_STR);
+        $stmt->bindParam(':destinatario', $destinatario, PDO::PARAM_STR);
+
+        // Ejecutar la declaración
+        $stmt->execute();
+
+        // Obtener los resultados
+        $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $chats;
+
+    } catch (PDOException $e) {
+        // Relanzar la excepción para ser atrapada en la función que llama
+        throw $e;
+    } finally {
+        // Cerrar la conexión
+        close_connection();
+    }
+}
+
 function AddChat($texto, $remitente, $destinatario) {
     
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
